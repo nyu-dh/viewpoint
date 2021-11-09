@@ -1,0 +1,1 @@
+Sitemap: /viewpoint/sitemap.xml
