@@ -1,5 +1,5 @@
-title:        DSS IIIF Viewers
-baseurl:      '' # the subpath of your site, e.g. /blog
+title:        viewpoint
+baseurl:      '/viewpoint'
 url:          ''
 permalink:    pretty
 incremental:  false
