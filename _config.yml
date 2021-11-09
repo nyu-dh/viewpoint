@@ -1,0 +1,15 @@
+title:        DSS IIIF Viewers
+baseurl:      '' # the subpath of your site, e.g. /blog
+url:          ''
+permalink:    pretty
+incremental:  false
+
+
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: default
+atom_feed:
+  hide: true
+
+webrick:
+  headers:
+    Access-Control-Allow-Origin: '*'
