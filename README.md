@@ -1,1 +1,0 @@
-# nyu-dss/viewpoint
