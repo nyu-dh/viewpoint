@@ -1,0 +1,14 @@
+{
+  "name": "nyu-dss-viewpoint",
+  "version": "0.1.0",
+  "description": "embeddable iiif viewers from uri params",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mnyrop",
+  "license": "MIT",
+  "dependencies": {
+    "bulma": "^0.9.1"
+  }
+}

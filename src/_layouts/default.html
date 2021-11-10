@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ site.title }}{% if page.title %} | {{ page.title }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+
+  <meta property="og:title" content="{{ site.title }}{% if page.title %} | {{ page.title }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absoluye_url }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:image" content="{{ site.preview_image }}">
+
+  <link rel="icon" href="{{ 'favicon.ico' | absolute_url }}">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | absolute_url }}">
+
+  {% unless page.no_style %}
+  <link rel="stylesheet" href="{{ 'assets/css/main.css' | absolute_url }}">
+  {% endunless %}
+</head>
+
+<body>
+  {{ content }}
+  <!-- <script src="js/scripts.js"></script> -->
+</body>
+</html>

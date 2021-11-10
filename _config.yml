@@ -1,14 +1,11 @@
-title:        viewpoint
+title:        nyu-dss/viewpoint
+url:          'https://nyu-dss.github.io'
 baseurl:      '/viewpoint'
-url:          ''
+description:  'embeddable iiif viewers from uri params'
+
 permalink:    pretty
 incremental:  false
-
-
-theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: default
-atom_feed:
-  hide: true
+source:       src
 
 webrick:
   headers:
