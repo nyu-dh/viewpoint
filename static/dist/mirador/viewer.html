@@ -5,9 +5,10 @@
 <script type="text/javascript">
 	const params = new URLSearchParams(window.location.search);
 	manifestID = params.get('manifest');
+	theme = params.get('theme') || 'light';
 	var miradorInstance = Mirador.viewer({
 		id: 'mirador',
-		selectedTheme: 'dark',
+		selectedTheme: theme,
 		language: 'en',
 		window: {
 			allowClose: false,
