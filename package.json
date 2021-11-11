@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "npm run timestamp && svelte-kit dev",
-		"timestamp": "echo \"<script context='module'>export const timestamp ='$(date '+%D @ %I:%M %Z')';</script>\" > src/lib/BuildTimeStamp.svelte",
+		"timestamp": "echo \"<script context='module'>export const timestamp ='$(TZ=EST date '+%D @ %I:%M %Z')';</script>\" > src/lib/BuildTimeStamp.svelte",
 		"build": "npm run timestamp && rm -rf build && svelte-kit build && touch ./build/.nojekyll",
 		"preview": "svelte-kit preview",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
