@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 
 export default {
-	basepath: '/viewpoint/'
+	basepath: '/viewpoint/',
 	kit: {
 		adapter: adapter({
 			pages: 'build',
