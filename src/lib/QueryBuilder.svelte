@@ -34,6 +34,7 @@
 
 	function handleSubmit() {
 		query = buildQuery();
+		window.open(query, '_blank');
 	}
 
 	function clearManifest() {
@@ -96,5 +97,5 @@
 
 <div class="content mt-5">
 	<h3>Your Query</h3>
-	<p><a href={query}>{query}</a></p>
+	<p><a href={query} target="_blank">{query}</a></p>
 </div>
