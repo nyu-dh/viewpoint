@@ -1,4 +1,6 @@
-<script>
+<script context="module">
+	import { base } from '$app/paths';
+
 	export const prerender = true;
 	export const site_title = 'nyu-dss/viewpoint';
 	export const site_description = 'embeddable iiif viewers from uri params with svelte-kit';
