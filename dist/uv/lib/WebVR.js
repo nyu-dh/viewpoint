@@ -6,11 +6,8 @@
  */
 
 var WEBVR = {
-
-	createButton: function ( renderer ) {
-
-		function showEnterVR( display ) {
-
+	createButton: function (renderer) {
+		function showEnterVR(display) {
 			button.style.display = '';
 
 			button.style.cursor = 'pointer';
@@ -19,21 +16,23 @@ var WEBVR = {
 
 			button.textContent = 'ENTER VR';
 
-			button.onmouseenter = function () { button.style.opacity = '1.0'; };
-			button.onmouseleave = function () { button.style.opacity = '0.5'; };
-
-			button.onclick = function () {
-
-				display.isPresenting ? display.exitPresent() : display.requestPresent( [ { source: renderer.domElement } ] );
-
+			button.onmouseenter = function () {
+				button.style.opacity = '1.0';
+			};
+			button.onmouseleave = function () {
+				button.style.opacity = '0.5';
 			};
 
-			renderer.vr.setDevice( display );
+			button.onclick = function () {
+				display.isPresenting
+					? display.exitPresent()
+					: display.requestPresent([{ source: renderer.domElement }]);
+			};
 
+			renderer.vr.setDevice(display);
 		}
 
 		function showVRNotFound() {
-
 			button.style.display = '';
 
 			button.style.cursor = 'auto';
@@ -47,12 +46,10 @@ var WEBVR = {
 
 			button.onclick = null;
 
-			renderer.vr.setDevice( null );
-
+			renderer.vr.setDevice(null);
 		}
 
-		function stylizeElement( element ) {
-
+		function stylizeElement(element) {
 			element.style.position = 'absolute';
 			element.style.bottom = '20px';
 			element.style.padding = '12px 6px';
@@ -65,60 +62,57 @@ var WEBVR = {
 			element.style.opacity = '0.5';
 			element.style.outline = 'none';
 			element.style.zIndex = '999';
-
 		}
 
-		if ( 'getVRDisplays' in navigator ) {
-
-			var button = document.createElement( 'button' );
+		if ('getVRDisplays' in navigator) {
+			var button = document.createElement('button');
 			button.style.display = 'none';
 
-			stylizeElement( button );
+			stylizeElement(button);
 
-			window.addEventListener( 'vrdisplayconnect', function ( event ) {
+			window.addEventListener(
+				'vrdisplayconnect',
+				function (event) {
+					showEnterVR(event.display);
+				},
+				false
+			);
 
-				showEnterVR( event.display );
+			window.addEventListener(
+				'vrdisplaydisconnect',
+				function (event) {
+					showVRNotFound();
+				},
+				false
+			);
 
-			}, false );
+			window.addEventListener(
+				'vrdisplaypresentchange',
+				function (event) {
+					button.textContent = event.display.isPresenting ? 'EXIT VR' : 'ENTER VR';
+				},
+				false
+			);
 
-			window.addEventListener( 'vrdisplaydisconnect', function ( event ) {
+			window.addEventListener(
+				'vrdisplayactivate',
+				function (event) {
+					event.display.requestPresent([{ source: renderer.domElement }]);
+				},
+				false
+			);
 
-				showVRNotFound();
-
-			}, false );
-
-			window.addEventListener( 'vrdisplaypresentchange', function ( event ) {
-
-				button.textContent = event.display.isPresenting ? 'EXIT VR' : 'ENTER VR';
-
-			}, false );
-
-			window.addEventListener( 'vrdisplayactivate', function ( event ) {
-
-				event.display.requestPresent( [ { source: renderer.domElement } ] );
-
-			}, false );
-
-			navigator.getVRDisplays()
-				.then( function ( displays ) {
-
-					if ( displays.length > 0 ) {
-
-						showEnterVR( displays[ 0 ] );
-
-					} else {
-
-						showVRNotFound();
-
-					}
-
-				} );
+			navigator.getVRDisplays().then(function (displays) {
+				if (displays.length > 0) {
+					showEnterVR(displays[0]);
+				} else {
+					showVRNotFound();
+				}
+			});
 
 			return button;
-
 		} else {
-
-			var message = document.createElement( 'a' );
+			var message = document.createElement('a');
 			message.href = 'https://webvr.info';
 			message.innerHTML = 'WEBVR NOT SUPPORTED';
 
@@ -126,33 +120,30 @@ var WEBVR = {
 			message.style.width = '180px';
 			message.style.textDecoration = 'none';
 
-			stylizeElement( message );
+			stylizeElement(message);
 
 			return message;
-
 		}
-
 	},
 
 	// DEPRECATED
 
 	checkAvailability: function () {
-		console.warn( 'WEBVR.checkAvailability has been deprecated.' );
-		return new Promise( function () {} );
+		console.warn('WEBVR.checkAvailability has been deprecated.');
+		return new Promise(function () {});
 	},
 
 	getMessageContainer: function () {
-		console.warn( 'WEBVR.getMessageContainer has been deprecated.' );
-		return document.createElement( 'div' );
+		console.warn('WEBVR.getMessageContainer has been deprecated.');
+		return document.createElement('div');
 	},
 
 	getButton: function () {
-		console.warn( 'WEBVR.getButton has been deprecated.' );
-		return document.createElement( 'div' );
+		console.warn('WEBVR.getButton has been deprecated.');
+		return document.createElement('div');
 	},
 
 	getVRDisplay: function () {
-		console.warn( 'WEBVR.getVRDisplay has been deprecated.' );
+		console.warn('WEBVR.getVRDisplay has been deprecated.');
 	}
-
 };

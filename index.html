@@ -1,81 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>nyu-dss/viewpoint</title>
-  <meta name="description" content="embeddable iiif viewers from uri params">
-  <meta name="author" content="">
+		<title>nyu-dss/viewpoint</title>
 
-  <meta property="og:title" content="nyu-dss/viewpoint">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="/">
-  <meta property="og:description" content="embeddable iiif viewers from uri params">
-  <meta property="og:image" content="">
+		
 
-  <link rel="icon" href="https://nyu-dss.github.io/viewpoint/favicon.ico">
-  <link rel="apple-touch-icon" href="https://nyu-dss.github.io/viewpoint/apple-touch-icon.png">
+		<link rel="modulepreload" href="/_app/start-85baefcc.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-e0b44dad.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-914df263.js">
+		<link rel="modulepreload" href="/_app/pages/index.svelte-ebe3b802.js">
+		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-629afbe2.css">
 
-  
-  <link rel="stylesheet" href="https://nyu-dss.github.io/viewpoint/assets/css/main.css">
-  
-</head>
+		<script type="module">
+			import { start } from "/_app/start-85baefcc.js";
+			start({
+				target: document.body,
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/pages/__layout.svelte-914df263.js"),
+						import("/_app/pages/index.svelte-ebe3b802.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002F",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
 
-<body>
-  <section class="hero is-info is-fullheight">
-  <div class="hero-body">
-    <div class="">
-      <p class="title">nyu-dss/viewpoint</p>
-      <p class="subtitle">embeddable iiif viewers from uri params</p>
 
-      <div class="field">
-        <label class="label">Manifest</label>
-        <div class="control">
-          <input class="input" type="text" value="https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json" placeholder="URI input" />
-        </div>
-      </div>
 
-      <div class="field">
-        <div class="control pt-3 pb-5">
-          <button class="button is-link">Clear</button>
-          <button class="button is-link">Validate</button>
-        </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Viewer</label>
-        <div class="control">
-          <div class="select">
-            <select>
-              <option>Mirador</option>
-              <option>Universal Viewer</option>
-            </select>
-          </div>
-        </div>
-      </div>
+<section class="hero is-info is-fullheight"><div class="hero-body"><div class=""><p class="title">nyu-dss/viewpoint</p>
+			<p class="subtitle">embeddable iiif viewers from uri params</p>
 
-      <div class="field">
-        <label class="label">Theme</label>
-        <div class="control">
-          <div class="select">
-            <select>
-              <option>Light</option>
-              <option>Dark</option>
-            </select>
-          </div>
-        </div>
-      </div>
+			<div class="field"><label class="label">Manifest</label>
+				<div class="control"><input class="input" type="text" value="https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json" placeholder="URI input"></div></div>
 
-      <div class="field">
-        <div class="control pt-3">
-          <button class="button is-link">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+			<div class="field"><div class="control pt-3 pb-5"><button class="button is-link">Clear</button>
+					<button class="button is-link">Validate</button></div></div>
 
-  <!-- <script src="js/scripts.js"></script> -->
-</body>
+			<div class="field"><label class="label">Viewer</label>
+				<div class="control"><div class="select"><select><option value="Mirador">Mirador</option><option value="Universal Viewer">Universal Viewer</option></select></div></div></div>
+
+			<div class="field"><label class="label">Theme</label>
+				<div class="control"><div class="select"><select><option value="Light">Light</option><option value="Dark">Dark</option></select></div></div></div>
+
+			<div class="field"><div class="control pt-3"><button class="button is-link">Submit</button></div></div></div></div></section>
+
+
+
+			
+		</div>
+	</body>
 </html>

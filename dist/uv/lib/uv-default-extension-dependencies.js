@@ -1,7 +1,7 @@
 define(function () {
-    return function (formats) {
-        return {
-            async: ['MetadataComponent']
-        };
-    };
+	return function (formats) {
+		return {
+			async: ['MetadataComponent']
+		};
+	};
 });
