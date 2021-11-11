@@ -6,11 +6,7 @@ const config = {
 	preprocess: sveltePreprocess(),
 
 	kit: {
-		adapter: staticAdapter({
-			pages: 'build/viewpoint',
-			assets: 'build/viewpoint',
-			fallback: null
-		}),
+		adapter: staticAdapter(),
 		paths: {
 			base: '/viewpoint'
 		},
