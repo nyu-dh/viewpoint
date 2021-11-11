@@ -8,6 +8,7 @@
 
 <svelte:head>
 	<title>{site_title}</title>
+	<link rel="icon" href="{base}/favicon.png" />
 </svelte:head>
 
 <section class="hero is-info is-fullheight">
