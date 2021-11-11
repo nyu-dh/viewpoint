@@ -7,17 +7,19 @@
 	let manifestURI = 'https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json';
 	let viewers = [
 		{
+			id: 'mirador',
 			label: 'Mirador',
-			id: 'mirador'
+			themes: ['Light', 'Dark']
+
 		},
 		{
+			id: 'uv',
 			label: 'Universal Viewer',
-			id: 'uv'
+			themes: ['Light']
 		}
 	];
 	let selectedViewer = viewers[0];
-	let themes = ['Light', 'Dark'];
-	let selectedTheme = themes[0];
+	let selectedTheme = selectedViewer.themes[0];
 	let query = buildQuery();
 	let iframeContainer;
 
@@ -86,7 +88,7 @@
 	<div class="control">
 		<div class="select">
 			<select bind:value={selectedTheme}>
-				{#each themes as theme}
+				{#each selectedViewer.themes as theme}
 					<option value={theme}>{theme}</option>
 				{/each}
 			</select>
