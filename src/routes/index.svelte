@@ -3,9 +3,9 @@
 	export const siteTitle = 'nyu-dss/viewpoint';
 	export const siteDescription = 'embeddable iiif viewers from uri params with svelte-kit';
 
-	import { base } 		from '$app/paths';
+	import { base } from '$app/paths';
 
-	import Heading 			from '$lib/Heading.svelte';
+	import Heading from '$lib/Heading.svelte';
 	import QueryBuilder from '$lib/QueryBuilder.svelte';
 </script>
 
@@ -17,7 +17,6 @@
 <section class="hero is-info is-fullheight">
 	<div class="hero-body">
 		<div class="container">
-
 			<Heading {siteTitle} {siteDescription} />
 			<QueryBuilder />
 		</div>
