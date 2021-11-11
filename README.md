@@ -25,7 +25,7 @@
   ``` sh
   npm run dev
   ```
-5. Open in browser at [http://localhost:3000](http://localhost:3000)
+5. Open in browser at [http://localhost:3000/viewpoint/](http://localhost:3000/viewpoint/)
 
 6. Quit the server with `Ctrl-c`.
 
