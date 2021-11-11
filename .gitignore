@@ -1,5 +1,6 @@
 .DS_Store
-.jekyll-cache
-.jekyll-metadata
-.sass-cache
-_site
+node_modules
+/build
+/.svelte-kit
+/package
+.env

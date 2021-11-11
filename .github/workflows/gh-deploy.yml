@@ -6,19 +6,21 @@ on:
       - main
 
 jobs:
-   deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - uses: ruby/setup-ruby@v1
-      - name: install
-        run: bundle install
+      - uses: ruby/setup-node@v1
+      - name: Setup Node
+        uses: actions/setup-node
+        with:
+          node-version: '16.10.0'
       - name: build
-        run: bundle exec jekyll clean && bundle exec jekyll build
+        run: npm run build
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./build
