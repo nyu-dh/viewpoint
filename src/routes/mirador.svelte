@@ -1,13 +1,14 @@
+
+
 <script>
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
 
 	onMount(async () => {
 		const Mirador = await import('mirador/dist/mirador.min.js');
-
-		const manifestID = $page.query.get('manifest');
-		const theme = $page.query.get('theme');
-
+		const hash = window.location.hash
+		const params = new URLSearchParams(hash.slice(1))
+		const manifestId = params.get('manifest')
+		const theme = params.get('theme')
 		const miradorInstance = Mirador.viewer({
 			id: 'mirador',
 			selectedTheme: theme,
@@ -30,7 +31,7 @@
 			},
 			windows: [
 				{
-					manifestId: manifestID
+					manifestId
 				}
 			]
 		});
