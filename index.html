@@ -8,16 +8,17 @@
 
 		
 
-		<link rel="modulepreload" href="/viewpoint/_app/start-41ca36cb.js">
-		<link rel="modulepreload" href="/viewpoint/_app/chunks/vendor-ea8a1cad.js">
+		<link rel="modulepreload" href="/viewpoint/_app/start-dc46fea2.js">
+		<link rel="modulepreload" href="/viewpoint/_app/chunks/vendor-1cfb493a.js">
+		<link rel="modulepreload" href="/viewpoint/_app/chunks/preload-helper-00b2f1f1.js">
 		<link rel="modulepreload" href="/viewpoint/_app/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/viewpoint/_app/pages/__layout.svelte-8bf13ead.js">
-		<link rel="modulepreload" href="/viewpoint/_app/pages/index.svelte-9a7cbff5.js">
+		<link rel="modulepreload" href="/viewpoint/_app/pages/__layout.svelte-8e436ca8.js">
+		<link rel="modulepreload" href="/viewpoint/_app/pages/index.svelte-46d19eb9.js">
 		<link rel="stylesheet" href="/viewpoint/_app/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/viewpoint/_app/assets/pages/__layout.svelte-629afbe2.css">
 
 		<script type="module">
-			import { start } from "/viewpoint/_app/start-41ca36cb.js";
+			import { start } from "/viewpoint/_app/start-dc46fea2.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/viewpoint","assets":""},
@@ -30,8 +31,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/viewpoint/_app/pages/__layout.svelte-8bf13ead.js"),
-						import("/viewpoint/_app/pages/index.svelte-9a7cbff5.js")
+						import("/viewpoint/_app/pages/__layout.svelte-8e436ca8.js"),
+						import("/viewpoint/_app/pages/index.svelte-46d19eb9.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -51,16 +52,15 @@
 
 <section class="hero is-info is-fullheight"><div class="hero-body"><div class="container"><h1 class="title"><a href="/viewpoint/">nyu-dss/viewpoint</a></h1>
 <p class="subtitle">embeddable iiif viewers from uri params with svelte-kit</p>
-<p class="pb-5">last built on 11/11/21 @ 05:38 est</p>
+<p class="pb-5">last built on 11/12/21 @ 01:09 est</p>
 			<div class="field"><label class="label">Manifest</label>
-	<div class="control"><input class="input" type="text" placeholder="URI input" value="https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json"></div></div>
+	<div class="control"><input class="input" type="text" placeholder="URI input" value="https://gallica.bnf.fr/iiif/ark:/12148/btv1b90266728/manifest.json"></div></div>
 
 <div class="field"><div class="control pt-3 pb-5"><button class="button is-link">Clear</button>
-		<button class="button is-link">Validate
-			</button></div></div>
+		<button class="button is-link">Random</button></div></div>
 
 <div class="field"><label class="label">Viewer</label>
-	<div class="control"><div class="select"><select><option value="[object Object]">Mirador</option><option value="[object Object]">Universal Viewer</option></select></div></div></div>
+	<div class="control"><div class="select"><select><option value="[object Object]">Mirador</option></select></div></div></div>
 
 <div class="field"><label class="label">Theme</label>
 	<div class="control"><div class="select"><select><option value="Light">Light</option><option value="Dark">Dark</option></select></div></div></div>
@@ -68,7 +68,7 @@
 <form><div class="field"><div class="control pt-3"><button  type="submit" class="button is-link">Submit</button></div></div></form>
 
 <div class="content mt-5"><h3>Your Query</h3>
-	<p><a href="/viewpoint/dist/mirador/viewer.html?manifest=https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json?theme=light" target="_blank">/viewpoint/dist/mirador/viewer.html?manifest=https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json?theme=light</a></p></div></div></div></section>
+	<p><a href="/viewpoint/mirador?&amp;manifest=https://gallica.bnf.fr/iiif/ark:/12148/btv1b90266728/manifest.json&amp;theme=light" target="_blank">/viewpoint/mirador?&amp;manifest=https://gallica.bnf.fr/iiif/ark:/12148/btv1b90266728/manifest.json&amp;theme=light</a></p></div></div></div></section>
 
 
 
