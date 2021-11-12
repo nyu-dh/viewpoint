@@ -16,11 +16,11 @@
 			themes: ['Light', 'Dark']
 
 		},
-		{
-			id: 'uv',
-			label: 'Universal Viewer',
-			themes: ['Dark']
-		}
+		// {
+		// 	id: 'uv',
+		// 	label: 'Universal Viewer',
+		// 	themes: ['Dark']
+		// }
 	];
 	let selectedViewer = viewers[0];
 	let selectedTheme = selectedViewer.themes[0];
