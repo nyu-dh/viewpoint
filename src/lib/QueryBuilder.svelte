@@ -5,8 +5,20 @@
 	let placeholderText = 'URI input';
 	let visibleValidCheck = false;
 	let manifests = [
+		'https://gallica.bnf.fr/iiif/ark:/12148/btv1b90266728/manifest.json',
 		'https://iiif.lib.harvard.edu/manifests/drs:4184689',
-		'https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json'
+		'https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json',
+		'https://sites.dlib.nyu.edu/viewer/api/presentation/photos/tamwag_tam630_cuid34887/manifest.json',
+		'https://www.e-codices.unifr.ch/metadata/iiif/bc-s-0007/manifest.json',
+		'https://www.e-codices.unifr.ch/metadata/iiif/bc-s-0058/manifest.json',
+		'https://www.e-codices.unifr.ch/metadata/iiif/snm-AG002760/manifest.json',
+		'https://www.e-codices.unifr.ch/metadata/iiif/hmtg-T09393/manifest.json',
+		'https://gallica.bnf.fr/iiif/ark:/12148/btv1b53212522c/manifest.json',
+		'https://gallica.bnf.fr/iiif/ark:/12148/btv1b8400342f/manifest.json',
+		'https://gallica.bnf.fr/iiif/ark:/12148/btv1b84006642/manifest.json',
+		'https://gallica.bnf.fr/iiif/ark:/12148/btv1b8490923n/manifest.json',
+		'https://cmoa-records-images.s3.amazonaws.com/fv001_001_006_002_B008_002/manifest.json',
+		'https://cmoa-records-images.s3.amazonaws.com/fv001_001_003_001_B003_F02_007/manifest.json'
 	];
 	let manifestURI = manifests[0];
 	let viewers = [
@@ -27,16 +39,23 @@
 	let query = buildQuery();
 	let iframeContainer;
 
-	function validateManifest() {
-		visibleValidCheck = !visibleValidCheck;
-	}
-
 	function buildQuery() {
 		return `${base}/${selectedViewer.id}?&manifest=${manifestURI}&theme=${selectedTheme.toLowerCase()}`;
 	}
 
 	function clearManifest() {
 		manifestURI = '';
+	}
+
+	function randomManifest() {
+		while (true) {
+			let random = Math.floor(Math.random() * manifests.length);
+			let randomManifest = manifests[random];
+			if (randomManifest !== manifestURI) {
+				manifestURI = randomManifest;
+				break;
+			}
+		}
 	}
 
 	function validateAndSubmit() {
@@ -63,11 +82,7 @@
 <div class="field">
 	<div class="control pt-3 pb-5">
 		<button on:click={clearManifest} class="button is-link">Clear</button>
-		<button on:click={validateManifest} class="button is-link">Validate
-			{#if visibleValidCheck}
-				<span in:fade={{ duration: 200 }} out:fade={{ duration: 200 }}>&nbsp&nbsp;✅</span>
-			{/if}
-		</button>
+		<button on:click={randomManifest} class="button is-link">Random</button>
 	</div>
 </div>
 
