@@ -4,7 +4,11 @@
 
 	let placeholderText = 'URI input';
 	let visibleValidCheck = false;
-	let manifestURI = 'https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json';
+	let manifests = [
+		'https://iiif.lib.harvard.edu/manifests/drs:4184689',
+		'https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json'
+	];
+	let manifestURI = manifests[0];
 	let viewers = [
 		{
 			id: 'mirador',
@@ -15,7 +19,7 @@
 		{
 			id: 'uv',
 			label: 'Universal Viewer',
-			themes: ['Light']
+			themes: ['Dark']
 		}
 	];
 	let selectedViewer = viewers[0];
@@ -28,10 +32,7 @@
 	}
 
 	function buildQuery() {
-		let hotfix = selectedViewer.id === 'uv' ? '#' : '';
-		return `${base}/dist/${
-			selectedViewer.id
-		}/viewer.html${hotfix}?manifest=${manifestURI}?theme=${selectedTheme.toLowerCase()}`;
+		return `${base}/${selectedViewer.id}?&manifest=${manifestURI}&theme=${selectedTheme.toLowerCase()}`;
 	}
 
 	function clearManifest() {
