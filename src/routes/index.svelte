@@ -1,12 +1,11 @@
 <script>
 	export const prerender = true;
-	export const siteTitle = 'nyu-dss/viewpoint';
-	export const siteDescription = 'embeddable iiif viewers from uri params with svelte-kit';
 
+	import { siteTitle, siteDescription } from '$lib/vars/constants.js';
+	import { timestamp } from '$lib/BuildTimeStamp.svelte';
 	import { base } from '$app/paths';
 
-	import Heading from '$lib/Heading.svelte';
-	import QueryBuilder from '$lib/QueryBuilder.svelte';
+	import Form from '$lib/Form.svelte';
 </script>
 
 <svelte:head>
@@ -17,8 +16,13 @@
 <section class="hero is-info is-fullheight">
 	<div class="hero-body">
 		<div class="container">
-			<Heading {siteTitle} {siteDescription} />
-			<QueryBuilder />
+			<h1 class="title">
+				<a href="{base}/">{siteTitle} </a>
+			</h1>
+			<p class="subtitle">{siteDescription}</p>
+			<p class="pb-5">last built on {timestamp.toLowerCase()}</p>
+
+			<Form />
 		</div>
 	</div>
 </section>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html />
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta
@@ -64,7 +64,7 @@
 		</script>
 	</head>
 	<body>
-		<div id="uv" class="uv"></div>
+		<div id="uv" class="uv" />
 
 		<script>
 			$(function () {

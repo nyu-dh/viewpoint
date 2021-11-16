@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 
-	import queryString from "query-string";
+	import queryString from 'query-string';
 
 	onMount(async () => {
 		const Mirador = await import('mirador/dist/mirador.min.js');
@@ -12,8 +12,6 @@
 
 			const manifestID = parsed['manifest'];
 			const theme = parsed['theme'] || 'light';
-
-			console.log(parsed);
 
 			const miradorInstance = Mirador.viewer({
 				id: 'mirador',
@@ -45,4 +43,4 @@
 	});
 </script>
 
-<div id="mirador" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0"></div>
+<div id="mirador" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0" />
