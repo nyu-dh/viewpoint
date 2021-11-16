@@ -40,7 +40,7 @@
 	let iframeContainer;
 
 	function buildQuery() {
-		return `${base}/${selectedViewer.id}?&manifest=${manifestURI}&theme=${selectedTheme.toLowerCase()}`;
+		return `${base}/${selectedViewer.id}#manifest=${manifestURI}&theme=${selectedTheme.toLowerCase()}`;
 	}
 
 	function clearManifest() {
