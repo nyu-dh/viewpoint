@@ -5,7 +5,8 @@
 	import { manifestURI, selectedViewer, query } from '$lib/vars/stores.js';
 
 
-	let embedCode, appURL, absoluteQuery;
+	let embedCode, absoluteQuery; 
+	let appURL = '';
 
 	$: absoluteQuery = appURL + $query;
 	$: embedCode = `<iframe src="${absoluteQuery}" height="400"/>`;
@@ -41,7 +42,7 @@
 		<header class="card-header">
 		 <p class="card-header-title">Full Screen Link</p>
 	 	</header>
-		<div class="card-content embed-code">
+		<div class="card-content">
 			<a href={absoluteQuery} target="_none">{absoluteQuery}</a>
 		</div>
 	</div>

@@ -26,8 +26,6 @@
 			const thumbs 			= thumbnailViewParse(parsed['thumbs']);
 			const sidebarOpen = JSON.parse(parsed['sidebar']) || false;
 
-			console.log(view);
-
 			const miradorInstance = Mirador.viewer({
 				id: 'mirador',
 				selectedTheme: theme,
