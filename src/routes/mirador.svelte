@@ -1,17 +1,32 @@
 <script>
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
-
 	import queryString from 'query-string';
 
 	onMount(async () => {
 		const Mirador = await import('mirador/dist/mirador.min.js');
 
+		function thumbnailViewParse(str) {
+			switch (str) {
+  			case 'right':
+				case 'bottom':
+    			return `far-${str}`;
+				default:
+					return 'off';
+			}
+		}
+
+
 		if (typeof window !== 'undefined') {
 			const parsed = queryString.parse(window.location.hash);
 
-			const manifestID = parsed['manifest'];
-			const theme = parsed['theme'] || 'light';
+			const manifestID 	= parsed['manifest'];
+			const theme 		 	= parsed['theme'] || 'light';
+			const view 				= parsed['view'] || 'single';
+			const thumbs 			= thumbnailViewParse(parsed['thumbs']);
+			const sidebarOpen = JSON.parse(parsed['sidebar']) || false;
+
+			console.log(view);
 
 			const miradorInstance = Mirador.viewer({
 				id: 'mirador',
@@ -19,16 +34,15 @@
 				language: 'en',
 				window: {
 					allowClose: false,
-					allowMaximize: true,
 					defaultSideBarPanel: 'info',
-					sideBarOpenByDefault: false,
-					defaultView: 'book'
-				},
-				workspace: {
-					type: 'mosaic' // Which workspace type to load by default. Other possible values are "elastic"
+					allowMaximize: false,
+					sideBarOpenByDefault: sidebarOpen,
+					allowTopMenuButton: false,
+					defaultView: view,
+					views: []
 				},
 				thumbnailNavigation: {
-					defaultPosition: 'off'
+					defaultPosition: thumbs
 				},
 				workspaceControlPanel: {
 					enabled: false

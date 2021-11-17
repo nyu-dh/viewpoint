@@ -1,6 +1,8 @@
 <script>
 	import { manifests, placeholderText, viewers } from '$lib/vars/constants.js';
-	import { manifestURI, selectedViewer, selectedTheme, query } from '$lib/vars/stores.js';
+	import { manifestURI, selectedViewer, queryObject } from '$lib/vars/stores.js';
+
+	$: $queryObject['manifest'] = $manifestURI;
 
 	function clearManifest() {
 		$manifestURI = '';
@@ -18,16 +20,24 @@
 	}
 </script>
 
-<div class="field">
-	<label class="label">Manifest</label>
-	<div class="control">
-		<input bind:value={$manifestURI} class="input" type="text" placeholder={placeholderText} />
+<article class="panel is-info">
+	<p class="panel-heading">
+		IIIF Manifest
+	</p>
+	<div class="panel-block">
+		<div class="field">
+			<div class="control">
+				<input bind:value={$manifestURI} class="input" type="text" placeholder={placeholderText} />
+			</div>
+		</div>
 	</div>
-</div>
 
-<div class="field">
-	<div class="control pt-3 pb-5">
-		<button on:click={clearManifest} class="button is-link">Clear</button>
-		<button on:click={randomManifest} class="button is-link">Random</button>
+	<div class="panel-block">
+		<div class="field">
+			<div class="control pt-3 pb-5">
+				<button on:click={clearManifest} class="button is-link">Clear</button>
+				<button on:click={randomManifest} class="button is-link">Random</button>
+			</div>
+		</div>
 	</div>
-</div>
+</article>

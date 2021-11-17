@@ -21,11 +21,32 @@ export const viewers = [
 	{
 		id: 'mirador',
 		label: 'Mirador',
-		themes: ['Light', 'Dark']
-	}
+		options: [
+			{
+				id: 'theme',
+				label: 'Theme',
+				values: ['Light', 'Dark']
+			},
+			{
+				id: 'view',
+				label: 'View style',
+				values: ['Single', 'Book', 'Gallery']
+			},
+			{
+				id: 'thumbs',
+				label: 'Thumbnail view',
+				values: ['Off', 'Right', 'Bottom']
+			},
+			{
+				id: 'sidebar',
+				label: 'Show sidebar by default',
+				values: ['False', 'True']
+			}
+		]
+	},
 	// {
 	// 	id: 'uv',
 	// 	label: 'Universal Viewer',
-	// 	themes: ['Dark']
+	// 	options: []
 	// }
 ];

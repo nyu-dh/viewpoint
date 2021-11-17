@@ -2,8 +2,8 @@ import { writable } from 'svelte/store';
 
 export const manifestURI = writable();
 export const selectedViewer = writable();
-export const selectedTheme = writable();
-export const query = writable();
+export const query = writable('');
+export const queryObject = writable({});
 
 export const siteTitle = 'nyu-dss/viewpoint';
 export const siteDescription = 'embeddable iiif viewers from uri params with svelte-kit';
@@ -24,15 +24,3 @@ export const manifests = [
 	'https://cmoa-records-images.s3.amazonaws.com/fv001_001_003_001_B003_F02_007/manifest.json'
 ];
 export const placeholderText = 'URI input';
-export const viewers = [
-	{
-		id: 'mirador',
-		label: 'Mirador',
-		themes: ['Light', 'Dark']
-	}
-	// {
-	// 	id: 'uv',
-	// 	label: 'Universal Viewer',
-	// 	themes: ['Dark']
-	// }
-];
