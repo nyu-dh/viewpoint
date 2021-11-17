@@ -11571,7 +11571,7 @@ var HTTPStatusCode;
 								'gopher:': !0,
 								'file:': !0
 							},
-							x = e('querystring');
+							x = e('query');
 						(i.prototype.parse = function (e, t, n) {
 							if (!l.isString(e))
 								throw new TypeError("Parameter 'url' must be a string, not " + typeof e);
@@ -11882,7 +11882,7 @@ var HTTPStatusCode;
 									e && (this.hostname = e);
 							});
 					},
-					{ './util': 37, punycode: 14, querystring: 17 }
+					{ './util': 37, punycode: 14, query: 17 }
 				],
 				37: [
 					function (e, t, n) {
@@ -13823,16 +13823,16 @@ var Utils;
 					-1 != s && (r = r.substr(0, r.indexOf('#'))), n.location.replace(r + o);
 				}
 			}),
-			(e.getQuerystringParameter = function (e, t) {
-				return t || (t = window), this.getQuerystringParameterFromString(e, t.location.search);
+			(e.getqueryParameter = function (e, t) {
+				return t || (t = window), this.getqueryParameterFromString(e, t.location.search);
 			}),
-			(e.getQuerystringParameterFromString = function (e, t) {
+			(e.getqueryParameterFromString = function (e, t) {
 				e = e.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
 				var n = new RegExp('[\\?&]' + e + '=([^&#]*)'),
 					i = n.exec(t);
 				return i ? decodeURIComponent(i[1].replace(/\+/g, ' ')) : null;
 			}),
-			(e.setQuerystringParameter = function (e, t, n) {
+			(e.setqueryParameter = function (e, t, n) {
 				if ((n || (n = window.document), n && n.location)) {
 					var i = this.updateURIKeyValuePair(n.location.hash.replace('#?', ''), e, t);
 					window.location.search = i;
@@ -16825,10 +16825,10 @@ define(
 									t.preventDefault();
 									var n = t.originalEvent.dataTransfer.getData('URL'),
 										i = Utils.Urls.getUrlParts(n),
-										o = Utils.Urls.getQuerystringParameterFromString('manifest', i.search);
+										o = Utils.Urls.getqueryParameterFromString('manifest', i.search);
 									if (
 										(o ||
-											(o = Utils.Urls.getQuerystringParameterFromString('collection', i.search)),
+											(o = Utils.Urls.getqueryParameterFromString('collection', i.search)),
 										o)
 									) {
 										e.fire(s.BaseEvents.DROP, o);
