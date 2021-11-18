@@ -24,6 +24,7 @@
 	<p class="panel-heading">
 		IIIF Manifest
 	</p>
+	<p class="pl-4 is-7">Input your own URI or use a random example.</p>
 	<div class="panel-block">
 		<div class="field">
 			<div class="control">
