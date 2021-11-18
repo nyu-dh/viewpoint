@@ -37,9 +37,14 @@ export const viewers = [
 				label: 'Thumbnail view',
 				values: ['Off', 'Right', 'Bottom']
 			},
+			// {
+			// 	id: 'sidebar',
+			// 	label: 'Open metadata sidebar',
+			// 	values: ['False', 'True']
+			// },
 			{
-				id: 'sidebar',
-				label: 'Show sidebar by default',
+				id: 'workspacecontrols',
+				label: 'Show workspace controls',
 				values: ['False', 'True']
 			}
 		]

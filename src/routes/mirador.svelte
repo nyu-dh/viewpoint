@@ -6,11 +6,24 @@
 	onMount(async () => {
 		const Mirador = await import('mirador/dist/mirador.min.js');
 
-		function thumbnailViewParse(str) {
-			switch (str) {
-  			case 'right':
+		function fetch(object, key, def='') {
+			let result = key in object ? object[key] : def;
+			switch (result) {
+				case 'true':
+					return true;
+				case 'false':
+					return false;
+				default:
+					return result;
+			}
+		}
+
+		function thumbnailCustomParse(object, key) {
+			let result = fetch(object, key);
+			switch (result) {
+				case 'right':
 				case 'bottom':
-    			return `far-${str}`;
+					return `far-${result}`;
 				default:
 					return 'off';
 			}
@@ -18,13 +31,14 @@
 
 
 		if (typeof window !== 'undefined') {
-			const parsed = queryString.parse(window.location.hash);
+			const response = queryString.parse(window.location.hash);
 
-			const manifestID 	= parsed['manifest'];
-			const theme 		 	= parsed['theme'] || 'light';
-			const view 				= parsed['view'] || 'single';
-			const thumbs 			= thumbnailViewParse(parsed['thumbs']);
-			const sidebarOpen = JSON.parse(parsed['sidebar']) || false;
+			const manifestID 				= fetch(response, 'manifest');
+			const theme 		 				= fetch(response, 'theme', 'light');
+			const view 							= fetch(response, 'view', 'single');
+			const thumbs 						= thumbnailCustomParse(response, 'thumbs');
+			const sidebarOpen 			= fetch(response, 'sidebar', false);
+			const workspaceControls = fetch(response, 'workspacecontrols', false);
 
 			const miradorInstance = Mirador.viewer({
 				id: 'mirador',
@@ -43,7 +57,7 @@
 					defaultPosition: thumbs
 				},
 				workspaceControlPanel: {
-					enabled: false
+					enabled: workspaceControls
 				},
 				windows: [
 					{
