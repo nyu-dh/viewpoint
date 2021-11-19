@@ -43,6 +43,10 @@ html, body {
 .fullwidth {
   width: 100%;
 }
-// .message-header {
-//   border-radius: 0 !important;
-// }
+
+
+.ephemeral-message {
+  font-family: monospace;
+  font-size: .8rem;
+  font-weight: normal;
+}

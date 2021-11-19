@@ -64,7 +64,7 @@
 {#if $selectedManifests.length > 2}
 <p class="subtitle is-7">3 items is the current maximum</p>
 {:else}
-<a href="" class="subtitle is-7" on:click={addManifest}>Add another (WiP!) +</a>
+<a href="" class="subtitle is-7" on:click={addManifest}>Add another +</a>
 {/if}
 
 <div class="pt-3 pb-5"></div>

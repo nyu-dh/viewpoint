@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	import { sampleManifests, placeholderText, viewers } from '$lib/vars/constants.js';
 	import { selectedManifests, selectedViewer, query } from '$lib/vars/stores.js';
@@ -10,11 +11,30 @@
 
 	let embedCode, absoluteQuery;
 	let appURL = '';
+	let embedCopiedMessage = false;
 
 	$: absoluteQuery = appURL + $query;
 	$: embedCode = `<iframe src="${absoluteQuery}" height="400"/>`;
 
 	$: $query, generateIframe();
+
+	// $: $query, pushState();
+	//
+	// function pushState() {
+	// 	if (typeof window !== 'undefined') {
+	// 		history.pushState(null, null, `#${$query})}`);
+	// 	}
+	// }
+
+	function copyToClipboard(id) {
+		let text = document.getElementById(id).textContent;
+		navigator.clipboard.writeText(text);
+	}
+
+	function triggerEmbedCopiedMessage() {
+		embedCopiedMessage = true;
+		setTimeout(() => { embedCopiedMessage = false;  }, 1000)
+	}
 
 	function generateIframe() {
 		if (typeof window !== 'undefined') {
@@ -57,11 +77,17 @@
 
 	<div class="column is-half" style="display: flex;">
 		<article class="message is-link mr-5">
-		  <div class="message-header">
-		    <p>Embed Code&nbsp;&nbsp;&nbsp;<a title="Copy to clipboard (WiP!)"><Icon data={copy} /></a></p>
+		  <div id="embed-header" class="message-header">
+		    <p>
+					Embed Code&nbsp;&nbsp;
+					<a title="Copy to clipboard" on:click={() => copyToClipboard('embed-code')} on:click={triggerEmbedCopiedMessage}><Icon data={copy} /></a>
+					{#if embedCopiedMessage}
+					<span transition:fade class="ephemeral-message">&nbsp;Copied to clipboard!</span>
+					{/if}
+				</p>
 		  </div>
 		  <div class="message-body">
-		    <p style="font-size:.8rem;word-wrap:break-word;font-family:monospace;">{embedCode}</p>
+		    <p id="embed-code" style="font-size:.8rem;word-wrap:break-word;font-family:monospace;">{embedCode}</p>
 			</div>
 		</article>
 	</div>
