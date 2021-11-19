@@ -8,18 +8,18 @@
 
 		
 
-		<link rel="modulepreload" href="/viewpoint/_app/start-a58d92b6.js">
-		<link rel="modulepreload" href="/viewpoint/_app/chunks/vendor-565e9525.js">
+		<link rel="modulepreload" href="/viewpoint/_app/start-adcd249f.js">
+		<link rel="modulepreload" href="/viewpoint/_app/chunks/vendor-c7fd40e5.js">
 		<link rel="modulepreload" href="/viewpoint/_app/chunks/preload-helper-00b2f1f1.js">
 		<link rel="modulepreload" href="/viewpoint/_app/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/viewpoint/_app/pages/__layout.svelte-b4d97c9f.js">
-		<link rel="modulepreload" href="/viewpoint/_app/pages/index.svelte-ef0e6b52.js">
+		<link rel="modulepreload" href="/viewpoint/_app/pages/__layout.svelte-916830ae.js">
+		<link rel="modulepreload" href="/viewpoint/_app/pages/index.svelte-4bb03995.js">
 		<link rel="stylesheet" href="/viewpoint/_app/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/viewpoint/_app/assets/vendor-ef2c9ea5.css">
-		<link rel="stylesheet" href="/viewpoint/_app/assets/pages/__layout.svelte-c7e12c78.css">
+		<link rel="stylesheet" href="/viewpoint/_app/assets/pages/__layout.svelte-2ae4e8ce.css">
 
 		<script type="module">
-			import { start } from "/viewpoint/_app/start-a58d92b6.js";
+			import { start } from "/viewpoint/_app/start-adcd249f.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/viewpoint","assets":""},
@@ -32,8 +32,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/viewpoint/_app/pages/__layout.svelte-b4d97c9f.js"),
-						import("/viewpoint/_app/pages/index.svelte-ef0e6b52.js")
+						import("/viewpoint/_app/pages/__layout.svelte-916830ae.js"),
+						import("/viewpoint/_app/pages/index.svelte-4bb03995.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -59,7 +59,7 @@
       
   </svg></a></h1>
 				<p class="subtitle is-6">embeddable iiif viewers with svelte-kit</p>
-				<p class="subtitle is-7">last built on 11/19/21 @ 12:42 est</p>
+				<p class="subtitle is-7">last built on 11/19/21 @ 02:56 est</p>
 				<p><img src="/viewpoint/eye.gif" style="margin-left:-20px;width:80px"><img src="/viewpoint/eye.gif" style="margin-left:-20px;width:80px"></p>
 				<h2 class="title is-6 mt-5">IIIF Manifest</h2>
 <p class="subtitle is-7">Input your own URI or use a random example.</p>
@@ -84,7 +84,7 @@
   </svg></button></div>
 	</div>
 
-<a href="" class="subtitle is-7">Add another (WiP!) +</a>
+<a href="" class="subtitle is-7">Add another +</a>
 
 <div class="pt-3 pb-5"></div>
 
@@ -110,12 +110,14 @@
 	<div class="column is-half" style="display: flex;"><article class="message is-primary"><div class="message-header"><p>Link to Full Screen Viewer</p></div>
 		  <div class="message-body"><p style="font-size:.8rem;word-wrap:break-word;"><a href="/viewpoint/mirador#" target="_none">/viewpoint/mirador#</a></p></div></article></div>
 
-	<div class="column is-half" style="display: flex;"><article class="message is-link mr-5"><div class="message-header"><p>Embed Code   <a title="Copy to clipboard (WiP!)"><svg version="1.1" class="fa-icon  svelte-1dof0an" width="16" height="16" role="presentation" viewBox="0 0 1792 1792">
+	<div class="column is-half" style="display: flex;"><article class="message is-link mr-5"><div id="embed-header" class="message-header"><p>Embed Code  
+					<a title="Copy to clipboard"><svg version="1.1" class="fa-icon  svelte-1dof0an" width="16" height="16" role="presentation" viewBox="0 0 1792 1792">
     <path id="path-0" d="M1696 384q40 0 68 28t28 68v1216q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-288h-544q-40 0-68-28t-28-68v-672q0-40 20-88t48-76l408-408q28-28 76-48t88-20h416q40 0 68 28t28 68v328q68-40 128-40h416zM1152 597l-299 299h299v-299zM512 213l-299 299h299v-299zM708 860l316-316v-416h-384v416q0 40-28 68t-68 28h-416v640h512v-256q0-40 20-88t48-76zM1664 1664v-1152h-384v416q0 40-28 68t-68 28h-416v640h896z"></path>
       
       
-  </svg></a></p></div>
-		  <div class="message-body"><p style="font-size:.8rem;word-wrap:break-word;font-family:monospace;">&lt;iframe src=&quot;/viewpoint/mirador#&quot; height=&quot;400&quot;/&gt;</p></div></article></div></div></div></div></div></section>
+  </svg></a>
+					</p></div>
+		  <div class="message-body"><p id="embed-code" style="font-size:.8rem;word-wrap:break-word;font-family:monospace;">&lt;iframe src=&quot;/viewpoint/mirador#&quot; height=&quot;400&quot;/&gt;</p></div></article></div></div></div></div></div></section>
 
 
 
