@@ -6,7 +6,7 @@
 	import { selectedManifests, selectedViewer, query } from '$lib/vars/stores.js';
 
 	import Icon from 'svelte-awesome';
-	import { copy } from 'svelte-awesome/icons';
+	import { copy, externalLink } from 'svelte-awesome/icons';
 
 
 	let embedCode, absoluteQuery;
@@ -65,7 +65,10 @@
 	<div class="column is-half" style="display: flex;">
 		<article class="message is-primary">
 		  <div class="message-header">
-		    <p>Link to Full Screen Viewer</p>
+		    <p>
+					Link to Full Screen Viewer&nbsp;&nbsp;
+					<a title="Open in new window" href={absoluteQuery} target="_none"><Icon data={externalLink} /></a>
+				</p>
 		  </div>
 		  <div class="message-body">
 				<p style="font-size:.8rem;word-wrap:break-word;">
@@ -87,7 +90,7 @@
 				</p>
 		  </div>
 		  <div class="message-body">
-		    <p id="embed-code" style="font-size:.8rem;word-wrap:break-word;font-family:monospace;">{embedCode}</p>
+		    <p id="embed-code" style="font-size:.8rem;word-wrap:break-word;font-family:monospace;" on:click={() => copyToClipboard('embed-code')} on:click={triggerEmbedCopiedMessage}>{embedCode}</p>
 			</div>
 		</article>
 	</div>

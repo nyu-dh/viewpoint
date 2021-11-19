@@ -21,13 +21,14 @@
 	<div class="hero-body m-0 p-0 fullwidth">
 		<div class="columns is-gapless m-0 fullwidth">
 			<div class="form-sidebar columnn p-5 is-one-third fullwidth">
-				<h1 class="title is-4">
+				<h1 class="title is-size-4">
 					<a href="{base}/">{siteTitle}</a>
 					&nbsp;&nbsp;
 					<a class="is-link" href="https://github.com/nyu-dss/viewpoint"><Icon data={github} scale="1.5"/></a>
 				</h1>
-				<p class="subtitle is-6">{siteDescription}</p>
-				<p class="subtitle is-7">last built on {timestamp.toLowerCase()}</p>
+				<p class="subtitle is-size-6">{siteDescription}</p>
+				<p class="is-size-7 has-text-success">!! for experimental use only !!</p>
+				<p class="subtitle is-size-7">last built on {timestamp.toLowerCase()}</p>
 				<p>
 					<img src="{staticPath}/eye.gif" style="margin-left:-20px;width:80px"/><img src="{staticPath}/eye.gif" style="margin-left:-20px;width:80px"/>
 				</p>
