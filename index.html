@@ -8,18 +8,18 @@
 
 		
 
-		<link rel="modulepreload" href="/viewpoint/_app/start-13a0dc6d.js">
+		<link rel="modulepreload" href="/viewpoint/_app/start-99e2f9cf.js">
 		<link rel="modulepreload" href="/viewpoint/_app/chunks/vendor-b0b63227.js">
 		<link rel="modulepreload" href="/viewpoint/_app/chunks/preload-helper-00b2f1f1.js">
 		<link rel="modulepreload" href="/viewpoint/_app/chunks/paths-28a87002.js">
 		<link rel="modulepreload" href="/viewpoint/_app/pages/__layout.svelte-2a142161.js">
-		<link rel="modulepreload" href="/viewpoint/_app/pages/index.svelte-0f161dc6.js">
+		<link rel="modulepreload" href="/viewpoint/_app/pages/index.svelte-9577a141.js">
 		<link rel="stylesheet" href="/viewpoint/_app/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/viewpoint/_app/assets/vendor-ef2c9ea5.css">
 		<link rel="stylesheet" href="/viewpoint/_app/assets/pages/__layout.svelte-697965a4.css">
 
 		<script type="module">
-			import { start } from "/viewpoint/_app/start-13a0dc6d.js";
+			import { start } from "/viewpoint/_app/start-99e2f9cf.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/viewpoint","assets":""},
@@ -33,7 +33,7 @@
 					error: null,
 					nodes: [
 						import("/viewpoint/_app/pages/__layout.svelte-2a142161.js"),
-						import("/viewpoint/_app/pages/index.svelte-0f161dc6.js")
+						import("/viewpoint/_app/pages/index.svelte-9577a141.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -60,7 +60,7 @@
   </svg></a></h1>
 				<p class="subtitle is-size-6">embeddable iiif viewers with svelte-kit</p>
 				<p class="is-size-7 has-text-success">!! for experimental use only !!</p>
-				<p class="subtitle is-size-7">last built on 11/19/21 @ 03:08 est</p>
+				<p class="subtitle is-size-7">last built on 11/19/21 @ 04:01 est</p>
 				<p><img src="/viewpoint/eye.gif" style="margin-left:-20px;width:80px"><img src="/viewpoint/eye.gif" style="margin-left:-20px;width:80px"></p>
 				<h2 class="title is-6 mt-5">IIIF Manifest</h2>
 <p class="subtitle is-7">Input your own URI or use a random example.</p>
@@ -68,6 +68,22 @@
 
 
 <div class="field has-addons fullwidth"><div class="control"><button title="Remove" class="button is-small" disabled><svg version="1.1" class="fa-icon  svelte-1dof0an" width="12.571428571428571" height="16" role="presentation" viewBox="0 0 1408 1792">
+    <path id="path-0" d="M1408 736v192q0 40-28 68t-68 28h-1216q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h1216q40 0 68 28t28 68z"></path>
+      
+      
+  </svg></button></div>
+		<div class="control fullwidth"><input class="input is-expanded is-small" type="text" placeholder="URI input" value="https://purl.stanford.edu/wr796rv9498/iiif/manifest"></div>
+		<div class="control"><button title="Random" class="button is-success is-small"><svg version="1.1" class="fa-icon  svelte-1dof0an" width="16" height="12.8" role="presentation" viewBox="0 0 640 512">
+    <path id="path-0" d="M592 192H473.26c12.69 29.59 7.12 65.2-17 89.32L320 417.58V464c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48V240c0-26.51-21.49-48-48-48zM480 376c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm-46.37-186.7L258.7 14.37c-19.16-19.16-50.23-19.16-69.39 0L14.37 189.3c-19.16 19.16-19.16 50.23 0 69.39L189.3 433.63c19.16 19.16 50.23 19.16 69.39 0L433.63 258.7c19.16-19.17 19.16-50.24 0-69.4zM96 248c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm128 128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm0-128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm0-128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm128 128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"></path>
+      
+      
+  </svg></button></div>
+		<div class="control"><button title="Clear" class="button is-danger is-small"><svg version="1.1" class="fa-icon  svelte-1dof0an" width="12.571428571428571" height="16" role="presentation" viewBox="0 0 1408 1792">
+    <path id="path-0" d="M1298 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"></path>
+      
+      
+  </svg></button></div>
+	</div><div class="field has-addons fullwidth"><div class="control"><button title="Remove" class="button is-small"><svg version="1.1" class="fa-icon  svelte-1dof0an" width="12.571428571428571" height="16" role="presentation" viewBox="0 0 1408 1792">
     <path id="path-0" d="M1408 736v192q0 40-28 68t-68 28h-1216q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h1216q40 0 68 28t28 68z"></path>
       
       
@@ -114,7 +130,7 @@
       
       
   </svg></a></p></div>
-		  <div class="message-body"><p style="font-size:.8rem;word-wrap:break-word;"><a href="/viewpoint/mirador#" target="_none">/viewpoint/mirador#</a></p></div></article></div>
+		  <div class="message-body"><p style="font-size:.8rem;word-wrap:break-word;max-width:100%"><a href="/viewpoint/mirador#" target="_none">/viewpoint/mirador#</a></p></div></article></div>
 
 	<div class="column is-half" style="display: flex;"><article class="message is-link mr-5"><div id="embed-header" class="message-header"><p>Embed Code  
 					<a title="Copy to clipboard"><svg version="1.1" class="fa-icon  svelte-1dof0an" width="16" height="16" role="presentation" viewBox="0 0 1792 1792">
@@ -123,7 +139,7 @@
       
   </svg></a>
 					</p></div>
-		  <div class="message-body"><p id="embed-code" style="font-size:.8rem;word-wrap:break-word;font-family:monospace;">&lt;iframe src=&quot;/viewpoint/mirador#&quot; height=&quot;400&quot;/&gt;</p></div></article></div></div></div></div></div></section>
+		  <div class="message-body"><p id="embed-code" style="font-size:.8rem;word-wrap:break-word;font-family:monospace;max-width:100%">&lt;iframe src=&quot;/viewpoint/mirador#&quot; height=&quot;400&quot;/&gt;</p></div></article></div></div></div></div></div></section>
 
 
 
