@@ -7,6 +7,7 @@
 	import { faDice } from '@fortawesome/free-solid-svg-icons';
 
 	$: $queryObject['manifests'] = $selectedManifests;
+	let maxResources = 4;
 
 	function clearManifest(index) {
 		$selectedManifests[index] = '';
@@ -31,7 +32,7 @@
 
 	function addManifest() {
 		let newSlot = $selectedManifests.length;
-		$selectedManifests[newSlot] = '';
+		$selectedManifests[newSlot] = sampleManifests[newSlot];
 	}
 </script>
 
@@ -61,8 +62,8 @@
 	</div>
 {/each}
 
-{#if $selectedManifests.length > 2}
-<p class="subtitle is-7">3 items is the current maximum</p>
+{#if $selectedManifests.length >= maxResources}
+<p class="subtitle is-7">{maxResources} items is the current maximum</p>
 {:else}
 <a href="" class="subtitle is-7" on:click={addManifest}>Add another +</a>
 {/if}

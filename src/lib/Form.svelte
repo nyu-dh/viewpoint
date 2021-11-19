@@ -8,7 +8,7 @@
 	import ManifestControls from '$lib/form/ManifestControls.svelte';
 	import ViewerControls from '$lib/form/ViewerControls.svelte';
 
-	$selectedManifests = [sampleManifests[0]];
+	$selectedManifests = [sampleManifests[0], sampleManifests[1]];
 	$selectedViewer = viewers[0];
 
 	$: $query = `${base}/${$selectedViewer.id}#${queryString.stringify($queryObject, { arrayFormat: 'bracket'})}`;

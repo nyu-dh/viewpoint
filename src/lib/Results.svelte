@@ -71,7 +71,7 @@
 				</p>
 		  </div>
 		  <div class="message-body">
-				<p style="font-size:.8rem;word-wrap:break-word;">
+				<p style="font-size:.8rem;word-wrap:break-word;max-width:100%">
 					<a href={absoluteQuery} target="_none">{absoluteQuery}</a>
 				</p>
 		  </div>
@@ -90,7 +90,7 @@
 				</p>
 		  </div>
 		  <div class="message-body">
-		    <p id="embed-code" style="font-size:.8rem;word-wrap:break-word;font-family:monospace;" on:click={() => copyToClipboard('embed-code')} on:click={triggerEmbedCopiedMessage}>{embedCode}</p>
+		    <p id="embed-code" style="font-size:.8rem;word-wrap:break-word;font-family:monospace;max-width:100%" on:click={() => copyToClipboard('embed-code')} on:click={triggerEmbedCopiedMessage}>{embedCode}</p>
 			</div>
 		</article>
 	</div>
