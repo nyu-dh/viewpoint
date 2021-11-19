@@ -8,17 +8,18 @@
 
 		
 
-		<link rel="modulepreload" href="/viewpoint/_app/start-71ae7cbb.js">
-		<link rel="modulepreload" href="/viewpoint/_app/chunks/vendor-71b8c924.js">
+		<link rel="modulepreload" href="/viewpoint/_app/start-f29b5f99.js">
+		<link rel="modulepreload" href="/viewpoint/_app/chunks/vendor-275e79b8.js">
 		<link rel="modulepreload" href="/viewpoint/_app/chunks/preload-helper-00b2f1f1.js">
 		<link rel="modulepreload" href="/viewpoint/_app/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/viewpoint/_app/pages/__layout.svelte-dc8b1a98.js">
-		<link rel="modulepreload" href="/viewpoint/_app/pages/index.svelte-dba2ef19.js">
+		<link rel="modulepreload" href="/viewpoint/_app/pages/__layout.svelte-9603d9df.js">
+		<link rel="modulepreload" href="/viewpoint/_app/pages/index.svelte-f8793d9a.js">
 		<link rel="stylesheet" href="/viewpoint/_app/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/viewpoint/_app/assets/pages/__layout.svelte-75765f61.css">
+		<link rel="stylesheet" href="/viewpoint/_app/assets/vendor-ef2c9ea5.css">
+		<link rel="stylesheet" href="/viewpoint/_app/assets/pages/__layout.svelte-c7e12c78.css">
 
 		<script type="module">
-			import { start } from "/viewpoint/_app/start-71ae7cbb.js";
+			import { start } from "/viewpoint/_app/start-f29b5f99.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/viewpoint","assets":""},
@@ -31,8 +32,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/viewpoint/_app/pages/__layout.svelte-dc8b1a98.js"),
-						import("/viewpoint/_app/pages/index.svelte-dba2ef19.js")
+						import("/viewpoint/_app/pages/__layout.svelte-9603d9df.js"),
+						import("/viewpoint/_app/pages/index.svelte-f8793d9a.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -50,41 +51,53 @@
 
 
 
-<section class="hero is-link"><div class="hero-body"><div class="container"><h1 class="title"><a href="/viewpoint/">nyu-dss/viewpoint</a></h1>
-			<p class="subtitle">embeddable iiif viewers from uri params with svelte-kit</p>
-			<p class="">last built on 11/18/21 @ 04:56 est</p></div></div></section>
+<section class="hero m-0 p-0 is-fullheight"><div class="hero-body m-0 p-0 fullwidth"><div class="columns is-gapless m-0 fullwidth"><div class="form-sidebar columnn p-5 is-one-third fullwidth"><h1 class="title is-4"><a href="/viewpoint/">nyu-dss/viewpoint</a></h1>
+				<p class="subtitle is-6">embeddable iiif viewers with svelte-kit</p>
+				<p class="subtitle is-7">last built on 11/18/21 @ 08:34 est</p>
+				<p><img src="/eye.gif" style="margin-left:-20px;width:80px"><img src="/eye.gif" style="margin-left:-20px;width:80px"></p>
+				<h2 class="title is-6 mt-5">IIIF Manifest</h2>
+<p class="subtitle is-7">Input your own URI or use a random example.</p>
+<div class="field has-addons fullwidth"><div class="control fullwidth"><input class="input is-expanded is-small" type="text" placeholder="URI input" value="https://gallica.bnf.fr/iiif/ark:/12148/btv1b90266728/manifest.json"></div>
+	<div class="control"><button title="Random" class="button is-success is-small"><svg version="1.1" class="fa-icon  svelte-1dof0an" width="16" height="12.8" role="presentation" viewBox="0 0 640 512">
+    <path id="path-0" d="M592 192H473.26c12.69 29.59 7.12 65.2-17 89.32L320 417.58V464c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48V240c0-26.51-21.49-48-48-48zM480 376c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm-46.37-186.7L258.7 14.37c-19.16-19.16-50.23-19.16-69.39 0L14.37 189.3c-19.16 19.16-19.16 50.23 0 69.39L189.3 433.63c19.16 19.16 50.23 19.16 69.39 0L433.63 258.7c19.16-19.17 19.16-50.24 0-69.4zM96 248c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm128 128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm0-128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm0-128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm128 128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"></path>
+      
+      
+  </svg></button></div>
+	<div class="control"><button title="Clear" class="button is-danger is-small"><svg version="1.1" class="fa-icon  svelte-1dof0an" width="12.571428571428571" height="16" role="presentation" viewBox="0 0 1408 1792">
+    <path id="path-0" d="M1298 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"></path>
+      
+      
+  </svg></button></div></div>
+<div class="pt-3 pb-5"></div>
 
-<section style="margin: 0 auto;"><div class="columns container" style="margin: auto;"><div class="columnn content py-5 mr-5 is-narrow"><article class="panel is-info"><p class="panel-heading">IIIF Manifest
-	</p>
-	<p class="pl-4 is-7">Input your own URI or use a random example.</p>
-	<div class="panel-block"><div class="field"><div class="control"><input class="input" type="text" placeholder="URI input" value="https://gallica.bnf.fr/iiif/ark:/12148/btv1b90266728/manifest.json"></div></div></div>
+<h2 class="title is-6 mt-5">Viewer Settings</h2>
 
-	<div class="panel-block"><div class="field"><div class="control pt-3 pb-5"><button class="button is-link">Clear</button>
-				<button class="button is-link">Random</button></div></div></div></article>
+<div class="field has-addons has-addons-left fullwidth"><div class="control button no-hover is-primary is-small">Viewer</div>
+	<div class="control fullwidth"><div class="select is-small fullwidth"><select class="fullwidth"><option value="[object Object]">Mirador</option></select></div></div></div>
 
-<article class="panel is-info"><p class="panel-heading">Viewer Settings
-	</p>
-	<div class="panel-block"><div class="field"><label class="label">Viewer</label>
-			<div class="control"><div class="select"><select><option value="[object Object]">Mirador</option></select></div></div></div></div>
+<div class="field has-addons has-addons-left fullwidth"><div class="control button no-hover is-primary is-small">Theme</div>
+    <div class="control fullwidth"><div class="select is-small fullwidth"><select class="fullwidth"><option value="dark">Dark</option><option value="light">Light</option></select>
+			</div></div>
+	</div><div class="field has-addons has-addons-left fullwidth"><div class="control button no-hover is-primary is-small">View style</div>
+    <div class="control fullwidth"><div class="select is-small fullwidth"><select class="fullwidth"><option value="single">Single</option><option value="book">Book</option><option value="gallery">Gallery</option></select>
+			</div></div>
+	</div><div class="field has-addons has-addons-left fullwidth"><div class="control button no-hover is-primary is-small">Thumbnail view</div>
+    <div class="control fullwidth"><div class="select is-small fullwidth"><select class="fullwidth"><option value="off">Off</option><option value="right">Right</option><option value="bottom">Bottom</option></select>
+			</div></div>
+	</div><div class="field has-addons has-addons-left fullwidth"><div class="control button no-hover is-primary is-small">Show controls</div>
+    <div class="control fullwidth"><div class="select is-small fullwidth"><select class="fullwidth"><option value="false">False</option><option value="true">True</option></select>
+			</div></div>
+	</div></div>
+			<div class="results-pane column is-two-thirds fullwidth"><div class="columns is-gapless is-multiline fullwidth"><div id="iframe-container" class="column is-12" style="height:75vh;background:#292929"></div>
+	<div class="column is-half" style="display: flex;"><article class="message is-primary"><div class="message-header"><p>Link to Full Screen Viewer</p></div>
+		  <div class="message-body"><p style="font-size:.8rem;word-wrap:break-word;"><a href="/viewpoint/mirador#" target="_none">/viewpoint/mirador#</a></p></div></article></div>
 
-	<div class="panel-block"><div class="field"><label class="label">Theme</label>
-				<div class="control"><div class="select"><select><option value="light">Light</option><option value="dark">Dark</option></select></div>
-				</div></div>
-		</div><div class="panel-block"><div class="field"><label class="label">View style</label>
-				<div class="control"><div class="select"><select><option value="single">Single</option><option value="book">Book</option><option value="gallery">Gallery</option></select></div>
-				</div></div>
-		</div><div class="panel-block"><div class="field"><label class="label">Thumbnail view</label>
-				<div class="control"><div class="select"><select><option value="off">Off</option><option value="right">Right</option><option value="bottom">Bottom</option></select></div>
-				</div></div>
-		</div><div class="panel-block"><div class="field"><label class="label">Show workspace controls</label>
-				<div class="control"><div class="select"><select><option value="false">False</option><option value="true">True</option></select></div>
-				</div></div>
-		</div></article></div>
-		<div class="column content p-5 is-two-thirds"><div id="results-container"><div class="query-url-container card my-5"><header class="card-header"><p class="card-header-title">Full Screen Link</p></header>
-		<div class="card-content"><a href="/viewpoint/mirador#" target="_none">/viewpoint/mirador#</a></div></div>
-
-	<div class="embed-code-container card my-5"><header class="card-header"><p class="card-header-title">Embed Code</p></header>
-		<div class="card-content embed-code"><p style="width:100%;word-wrap:break-word;font-family:monospace;">&lt;iframe src=&quot;/viewpoint/mirador#&quot; height=&quot;400&quot;/&gt;</p></div></div></div></div></div></section>
+	<div class="column is-half" style="display: flex;"><article class="message is-link mr-5"><div class="message-header"><p>Embed Code   <a title="Copy to clipboard (WiP!)"><svg version="1.1" class="fa-icon  svelte-1dof0an" width="16" height="16" role="presentation" viewBox="0 0 1792 1792">
+    <path id="path-0" d="M1696 384q40 0 68 28t28 68v1216q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-288h-544q-40 0-68-28t-28-68v-672q0-40 20-88t48-76l408-408q28-28 76-48t88-20h416q40 0 68 28t28 68v328q68-40 128-40h416zM1152 597l-299 299h299v-299zM512 213l-299 299h299v-299zM708 860l316-316v-416h-384v416q0 40-28 68t-68 28h-416v640h512v-256q0-40 20-88t48-76zM1664 1664v-1152h-384v416q0 40-28 68t-68 28h-416v640h896z"></path>
+      
+      
+  </svg></a></p></div>
+		  <div class="message-body"><p style="font-size:.8rem;word-wrap:break-word;font-family:monospace;">&lt;iframe src=&quot;/viewpoint/mirador#&quot; height=&quot;400&quot;/&gt;</p></div></article></div></div></div></div></div></section>
 
 
 
