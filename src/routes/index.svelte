@@ -22,7 +22,7 @@
 				<p class="subtitle is-6">{siteDescription}</p>
 				<p class="subtitle is-7">last built on {timestamp.toLowerCase()}</p>
 				<p>
-					<img src="/eye.gif" style="margin-left:-20px;width:80px"/><img src="/eye.gif" style="margin-left:-20px;width:80px"/>
+					<img src="./eye.gif" style="margin-left:-20px;width:80px"/><img src="./eye.gif" style="margin-left:-20px;width:80px"/>
 				</p>
 				<Form />
 			</div>
