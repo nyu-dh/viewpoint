@@ -1,6 +1,6 @@
 export const siteTitle = 'nyu-dss/viewpoint';
 export const siteDescription = 'embeddable iiif viewers with svelte-kit';
-export const manifests = [
+export const sampleManifests = [
 	'https://gallica.bnf.fr/iiif/ark:/12148/btv1b90266728/manifest.json',
 	'https://iiif.lib.harvard.edu/manifests/drs:4184689',
 	'https://iiif.bodleian.ox.ac.uk/iiif/manifest/e32a277e-91e2-4a6d-8ba6-cc4bad230410.json',

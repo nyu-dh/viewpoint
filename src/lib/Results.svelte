@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import { manifests, placeholderText, viewers } from '$lib/vars/constants.js';
-	import { manifestURI, selectedViewer, query } from '$lib/vars/stores.js';
+	import { sampleManifests, placeholderText, viewers } from '$lib/vars/constants.js';
+	import { selectedManifests, selectedViewer, query } from '$lib/vars/stores.js';
 
 	import Icon from 'svelte-awesome';
 	import { copy } from 'svelte-awesome/icons';
