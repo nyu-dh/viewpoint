@@ -7,15 +7,7 @@
 		const Mirador = await import('mirador/dist/mirador.min.js');
 
 		function fetch(object, key, def='') {
-			let result = key in object ? object[key] : def;
-			switch (result) {
-				case 'true':
-					return true;
-				case 'false':
-					return false;
-				default:
-					return result;
-			}
+			return key in object ? object[key] : def;
 		}
 
 		function thumbnailCustomParse(object, key) {
@@ -29,16 +21,24 @@
 			}
 		}
 
+		function windowObjectArray(manifests) {
+			let result = [];
+			manifests.forEach(m => result.push({ manifestId: m }));
+			return result;
+		}
+
 
 		if (typeof window !== 'undefined') {
-			const response = queryString.parse(window.location.hash);
-
-			const manifestID 				= fetch(response, 'manifest');
+			const response 					= queryString.parse(window.location.hash, {parseBooleans: true, arrayFormat: 'bracket'});
+			const manifests 				= fetch(response, 'manifests');
 			const theme 		 				= fetch(response, 'theme', 'light');
 			const view 							= fetch(response, 'view', 'single');
 			const thumbs 						= thumbnailCustomParse(response, 'thumbs');
 			const sidebarOpen 			= fetch(response, 'sidebar', false);
 			const workspaceControls = fetch(response, 'workspacecontrols', false);
+			const windows						= windowObjectArray(manifests);
+
+			console.log(manifests)
 
 			const miradorInstance = Mirador.viewer({
 				id: 'mirador',
@@ -59,11 +59,7 @@
 				workspaceControlPanel: {
 					enabled: workspaceControls
 				},
-				windows: [
-					{
-						manifestId: manifestID
-					}
-				]
+				windows: windows
 			});
 		}
 	});

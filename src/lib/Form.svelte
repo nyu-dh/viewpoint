@@ -11,7 +11,7 @@
 	$selectedManifests = [sampleManifests[0]];
 	$selectedViewer = viewers[0];
 
-	$: $query = `${base}/${$selectedViewer.id}#${queryString.stringify($queryObject, {})}`;
+	$: $query = `${base}/${$selectedViewer.id}#${queryString.stringify($queryObject, { arrayFormat: 'bracket'})}`;
 </script>
 
 

@@ -6,7 +6,7 @@
 	import { minus, remove } from 'svelte-awesome/icons';
 	import { faDice } from '@fortawesome/free-solid-svg-icons';
 
-	$: $queryObject['manifest'] = $selectedManifests[0];
+	$: $queryObject['manifests'] = $selectedManifests;
 
 	function clearManifest(index) {
 		$selectedManifests[index] = '';
@@ -18,7 +18,7 @@
 		$selectedManifests = filtered;
 	}
 
-	function randomManifest(manifest, index) {
+	function randomManifest(index) {
 		while (true) {
 			let random = Math.floor(Math.random() * sampleManifests.length);
 			let randomManifest = sampleManifests[random];
@@ -30,8 +30,8 @@
 	}
 
 	function addManifest() {
-		let index = $selectedManifests.length;
-		$selectedManifests[index] = sampleManifests[index];
+		let newSlot = $selectedManifests.length;
+		$selectedManifests[newSlot] = '';
 	}
 </script>
 
@@ -53,7 +53,7 @@
 			<input bind:value={m} class="input is-expanded is-small" type="text" placeholder={placeholderText} />
 		</div>
 		<div class="control">
-			<button on:click={() => randomManifest(m, i)} title="Random" class="button is-success is-small"><Icon data={faDice} /></button>
+			<button on:click={() => randomManifest(i)} title="Random" class="button is-success is-small"><Icon data={faDice} /></button>
 		</div>
 		<div class="control">
 			<button on:click={() => clearManifest(i)} title="Clear" class="button is-danger is-small"><Icon data={remove} /></button>
