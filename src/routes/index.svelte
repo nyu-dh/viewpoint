@@ -1,7 +1,7 @@
 <script>
 	export const prerender = true;
 
-	import { siteTitle, siteDescription } from '$lib/vars/constants.js';
+	import { siteTitle, siteDescription, staticPath } from '$lib/vars/constants.js';
 	import { timestamp } from '$lib/BuildTimeStamp.svelte';
 	import { base } from '$app/paths';
 
@@ -11,7 +11,7 @@
 
 <svelte:head>
 	<title>{siteTitle}</title>
-	<link rel="icon" href="{base}/favicon.png" />
+	<link rel="icon" href="{staticPath}/favicon.png" />
 </svelte:head>
 
 <section class="hero m-0 p-0 is-fullheight">
@@ -22,7 +22,7 @@
 				<p class="subtitle is-6">{siteDescription}</p>
 				<p class="subtitle is-7">last built on {timestamp.toLowerCase()}</p>
 				<p>
-					<img src="./eye.gif" style="margin-left:-20px;width:80px"/><img src="./eye.gif" style="margin-left:-20px;width:80px"/>
+					<img src="{staticPath}/eye.gif" style="margin-left:-20px;width:80px"/><img src="{staticPath}/eye.gif" style="margin-left:-20px;width:80px"/>
 				</p>
 				<Form />
 			</div>

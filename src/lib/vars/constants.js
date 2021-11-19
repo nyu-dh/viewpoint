@@ -16,6 +16,7 @@ export const manifests = [
 	'https://cmoa-records-images.s3.amazonaws.com/fv001_001_006_002_B008_002/manifest.json',
 	'https://cmoa-records-images.s3.amazonaws.com/fv001_001_003_001_B003_F02_007/manifest.json'
 ];
+export const staticPath = import.meta.env.DEV ?  '' : '/viewpoint';
 export const placeholderText = 'URI input';
 export const viewers = [
 	{
