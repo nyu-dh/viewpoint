@@ -1,5 +1,5 @@
 export const siteTitle = 'nyu-dss/viewpoint';
-export const siteDescription = 'embeddable iiif viewers from uri params with svelte-kit';
+export const siteDescription = 'embeddable iiif viewers with svelte-kit';
 export const manifests = [
 	'https://gallica.bnf.fr/iiif/ark:/12148/btv1b90266728/manifest.json',
 	'https://iiif.lib.harvard.edu/manifests/drs:4184689',
@@ -25,7 +25,8 @@ export const viewers = [
 			{
 				id: 'theme',
 				label: 'Theme',
-				values: ['Light', 'Dark']
+				values: ['Dark', 'Light'],
+				icon: 'paintBrush'
 			},
 			{
 				id: 'view',
@@ -44,8 +45,9 @@ export const viewers = [
 			// },
 			{
 				id: 'workspacecontrols',
-				label: 'Show workspace controls',
-				values: ['False', 'True']
+				label: 'Show controls',
+				values: ['False', 'True'],
+				icon: 'cog'
 			}
 		]
 	},

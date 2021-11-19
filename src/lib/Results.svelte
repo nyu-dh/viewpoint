@@ -4,8 +4,11 @@
 	import { manifests, placeholderText, viewers } from '$lib/vars/constants.js';
 	import { manifestURI, selectedViewer, query } from '$lib/vars/stores.js';
 
+	import Icon from 'svelte-awesome';
+	import { copy } from 'svelte-awesome/icons';
 
-	let embedCode, absoluteQuery; 
+
+	let embedCode, absoluteQuery;
 	let appURL = '';
 
 	$: absoluteQuery = appURL + $query;
@@ -16,7 +19,7 @@
 	function generateIframe() {
 		if (typeof window !== 'undefined') {
 			let existing = document.getElementById('viewer-iframe');
-			let iframeContainer = document.getElementById('results-container');
+			let iframeContainer = document.getElementById('iframe-container');
 
 			if (existing !== null) {
 				existing.remove();
@@ -26,7 +29,7 @@
 			iframe.setAttribute('src', $query);
 			iframe.setAttribute('id', 'viewer-iframe');
 			iframe.style.width = '100%';
-			iframe.style.height = '400px';
+			iframe.style.height = '75vh';
 			iframeContainer.prepend(iframe);
 		}
 	}
@@ -37,22 +40,29 @@
 	});
 </script>
 
-<div id="results-container">
-	<div class="query-url-container card my-5">
-		<header class="card-header">
-		 <p class="card-header-title">Full Screen Link</p>
-	 	</header>
-		<div class="card-content">
-			<a href={absoluteQuery} target="_none">{absoluteQuery}</a>
-		</div>
+<div class="columns is-gapless is-multiline fullwidth">
+	<div id="iframe-container" class="column is-12" style="height:75vh;background:#292929"></div>
+	<div class="column is-half" style="display: flex;">
+		<article class="message is-primary">
+		  <div class="message-header">
+		    <p>Link to Full Screen Viewer</p>
+		  </div>
+		  <div class="message-body">
+				<p style="font-size:.8rem;word-wrap:break-word;">
+					<a href={absoluteQuery} target="_none">{absoluteQuery}</a>
+				</p>
+		  </div>
+		</article>
 	</div>
 
-	<div class="embed-code-container card my-5">
-		<header class="card-header">
-		 <p class="card-header-title">Embed Code</p>
-	 	</header>
-		<div class="card-content embed-code">
-			<p style="width:100%;word-wrap:break-word;font-family:monospace;">{embedCode}</p>
-		</div>
+	<div class="column is-half" style="display: flex;">
+		<article class="message is-link mr-5">
+		  <div class="message-header">
+		    <p>Embed Code&nbsp;&nbsp;&nbsp;<a title="Copy to clipboard (WiP!)"><Icon data={copy} /></a></p>
+		  </div>
+		  <div class="message-body">
+		    <p style="font-size:.8rem;word-wrap:break-word;font-family:monospace;">{embedCode}</p>
+			</div>
+		</article>
 	</div>
 </div>

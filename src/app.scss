@@ -1,4 +1,48 @@
 @charset "utf-8";
 
-$container-max-width: 900px;
+/* $container-max-width: 900px; */
+$primary: #8957E5;
+$link: #5600E8;
+$message-header-radius: 0px;
+$message-radius: 0px;
+
+/* EA80FC, BB86FC, 5600E8 */
+
 @import 'bulma/bulma.sass';
+html, body {
+  background: #292929;
+}
+.form-sidebar {
+  background: black;
+  p, p.subtitle, .label {
+    color: #979797 !important;
+  }
+  .label {
+    font-weight: normal;
+  }
+  a {
+    color: white !important;
+    &:hover {
+      color: $primary !important;
+    }
+  }
+  h1, h2 {
+    color: white !important;
+  }
+  button.is-primary {
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    font-size: .8rem;
+  }
+  .is-primary.no-hover:hover {
+    background-color: $primary;
+    cursor:default;
+  }
+}
+
+.fullwidth {
+  width: 100%;
+}
+// .message-header {
+//   border-radius: 0 !important;
+// }

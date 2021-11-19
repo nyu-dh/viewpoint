@@ -14,25 +14,21 @@
 	<link rel="icon" href="{base}/favicon.png" />
 </svelte:head>
 
-<section class="hero is-link">
-	<div class="hero-body">
-		<div class="container">
-			<h1 class="title">
-				<a href="{base}/">{siteTitle} </a>
-			</h1>
-			<p class="subtitle">{siteDescription}</p>
-			<p class="">last built on {timestamp.toLowerCase()}</p>
-		</div>
-	</div>
-</section>
-
-<section style="margin: 0 auto;">
-	<div class="columns container" style="margin: auto;">
-		<div class="columnn content py-5 mr-5 is-narrow">
-			<Form />
-		</div>
-		<div class="column content p-5 is-two-thirds">
-			<Results />
+<section class="hero m-0 p-0 is-fullheight">
+	<div class="hero-body m-0 p-0 fullwidth">
+		<div class="columns is-gapless m-0 fullwidth">
+			<div class="form-sidebar columnn p-5 is-one-third fullwidth">
+				<h1 class="title is-4"><a href="{base}/">{siteTitle} </a></h1>
+				<p class="subtitle is-6">{siteDescription}</p>
+				<p class="subtitle is-7">last built on {timestamp.toLowerCase()}</p>
+				<p>
+					<img src="/eye.gif" style="margin-left:-20px;width:80px"/><img src="/eye.gif" style="margin-left:-20px;width:80px"/>
+				</p>
+				<Form />
+			</div>
+			<div class="results-pane column is-two-thirds fullwidth">
+				<Results />
+			</div>
 		</div>
 	</div>
 </section>

@@ -2,6 +2,10 @@
 	import { manifests, placeholderText, viewers } from '$lib/vars/constants.js';
 	import { manifestURI, selectedViewer, queryObject } from '$lib/vars/stores.js';
 
+	import Icon from 'svelte-awesome';
+	import { remove } from 'svelte-awesome/icons';
+	import { faDice } from '@fortawesome/free-solid-svg-icons';
+
 	$: $queryObject['manifest'] = $manifestURI;
 
 	function clearManifest() {
@@ -20,25 +24,18 @@
 	}
 </script>
 
-<article class="panel is-info">
-	<p class="panel-heading">
-		IIIF Manifest
-	</p>
-	<p class="pl-4 is-7">Input your own URI or use a random example.</p>
-	<div class="panel-block">
-		<div class="field">
-			<div class="control">
-				<input bind:value={$manifestURI} class="input" type="text" placeholder={placeholderText} />
-			</div>
-		</div>
+<h2 class="title is-6 mt-5">IIIF Manifest</h2>
+<p class="subtitle is-7">Input your own URI or use a random example.</p>
+<div class="field has-addons fullwidth">
+	<div class="control fullwidth">
+		<input bind:value={$manifestURI} class="input is-expanded is-small" type="text" placeholder={placeholderText} />
 	</div>
-
-	<div class="panel-block">
-		<div class="field">
-			<div class="control pt-3 pb-5">
-				<button on:click={clearManifest} class="button is-link">Clear</button>
-				<button on:click={randomManifest} class="button is-link">Random</button>
-			</div>
-		</div>
+	<div class="control">
+		<button on:click={randomManifest} title="Random" class="button is-success is-small"><Icon data={faDice} /></button>
 	</div>
-</article>
+	<div class="control">
+		<button on:click={clearManifest} title="Clear" class="button is-danger is-small"><Icon data={remove} /></button>
+	</div>
+</div>
+<div class="pt-3 pb-5">
+</div>
