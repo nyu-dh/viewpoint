@@ -24,7 +24,7 @@ jobs:
       - name: deploy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ${{secrets.FTP_SERVER}}
+          server: dss.hosting.nyu.edu
           username: ${{secrets.FTP_USERNAME}}@$dss.hosting.nyu.edu
           password: ${{secrets.FTP_PASSWORD}}
           local-dir: ./build
