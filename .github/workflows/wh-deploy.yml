@@ -27,6 +27,6 @@ jobs:
           server: dss.hosting.nyu.edu
           username: ${{secrets.FTP_USERNAME}}@$dss.hosting.nyu.edu
           password: ${{secrets.FTP_PASSWORD}}
-          local-dir: ./build
+          local-dir: ./build/
           state-name: ./.ftp-deploy-sync-state.json
           server-dir: 'viewpoint/' # optional subdir, must end in /
